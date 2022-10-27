@@ -13,24 +13,24 @@ def random_date(start, end):
     random_second = random.randrange(int_delta)
     return start + datetime.timedelta(seconds=random_second)
 
-# with open('source_table_1.csv', 'w') as f:
-#     # create the csv writer
-#     writer = csv.writer(f)
-
-#     # Header
-#     writer.writerow(['td', 'b', 'c'])
-
-#     # write a row to the csv file
-#     for i in range(2000000):
-#         writer.writerow([i+1, ''.join(random.choices(string.ascii_uppercase + string.ascii_uppercase, k=3)), random.randint(100,1000)])
-
-
-with open('source_table_2.csv', 'w') as f:
+with open('source_table_1_2m.csv', 'w',newline='') as f:
     # create the csv writer
     writer = csv.writer(f)
 
     # Header
-    writer.writerow(['td', 'b', 'c'])
+    writer.writerow(['TD', 'MRCH_NM', 'MRCH_ST'])
+
+    # write a row to the csv file
+    for i in range(2000000):
+        writer.writerow([i+1, ''.join(random.choices(string.ascii_uppercase + string.ascii_uppercase, k=3)), random.randint(100,1000)])
+
+
+with open('source_table_2_2m.csv', 'w',newline='') as f:
+    # create the csv writer
+    writer = csv.writer(f)
+
+    # Header
+    writer.writerow(['TD', 'TXN_AMT', 'TXN_DT'])
 
     # write a row to the csv file
     for i in range(500000,2500000):
